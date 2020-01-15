@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dubstep Cat Skifcha on CSS by VMerk</title>
+    
+    <style>
+        :root {
+          --color: #ffffff;
+          --glasses-color: #333642;
+        }
+
+        body {
+            background-color: var(--glasses-color);
+        }
+
+        main {
+          min-height: 290px;
+          width: 100%;
+          position: relative;
+        }
+
+        #anaglyph {
+          position: absolute;
+          left: 50%;
+          left: calc(50% - 50px);
+          top: 100px;
+        }
+
+        #anaglyph .skifcha, 
+        #anaglyph .skifcha.red,
+        #anaglyph .skifcha.cyan {
+          position: absolute;
+          z-index: 1;
+        }
+
+        #anaglyph .skifcha.red .glasses,
+        #anaglyph .skifcha.cyan .glasses {
+          display: none;
+        }
+
+        #anaglyph .skifcha {
+          left: 5px;
+        }
+
+        #anaglyph .skifcha.red,
+        #anaglyph .skifcha.cyan {
+            z-index: 0;
+            opacity: 0.7;
+        }
+
+        #anaglyph .skifcha.red {
+          left: 10px;
+        }
+
+        #anaglyph .skifcha.cyan {
+          left: 0px;
+        }
+
+        .skifcha {
+            position: relative;
+            height: 100px;
+            width: 90px;
+            display: inline-block;
+            overflow: hide;
+            z-index: 1;
+            left: 0px;
+            top: 0px;
+        }
+        .skifcha.red {
+          --color: red; 
+        }
+        .skifcha.cyan {
+          --color: cyan; 
+        }
+        .skifcha * {
+          background-color: var(--color);
+        }
+
+        .skifcha .main-shape {
+            height: 106%;
+            width: 127%;
+            border-radius: 90%;
+        }
+
+        .skifcha .main-shape *, 
+        .skifcha .left-ear *,
+        .skifcha .right-ear * {
+          position: absolute;
+        }
+
+        .skifcha .main-shape .shape:nth-child(1) {
+            height: 65%;
+            width: 67%;
+            border-radius: 90%;
+            left: 1%;
+            top: 30%;
+        }
+
+        .skifcha .main-shape .shape:nth-child(2) {
+            height: 100%;
+            width: 110%;
+            border-radius: 90%;
+            left: 17%;
+            top: 7%;
+        }
+
+        .skifcha .main-shape .shape:nth-child(3) {
+            height: 70%;
+            width: 70%;
+            border-radius: 90%;
+            left: 4%;
+            top: -1%;
+        }
+
+        .skifcha .main-shape .shape:nth-child(4) {
+            height: 70%;
+            width: 70%;
+            border-radius: 90%;
+            left: 53%;
+            top: 1%;
+        }
+
+        .skifcha .left-ear .shape:nth-child(1) {
+            height: 70%;
+            width: 20%;
+            border-radius: 100% / 100%;
+            left: 2%;
+            transform: rotate(-1deg);
+            top: -35%;
+        }
+        .skifcha .left-ear .shape:nth-child(2) {
+            height: 70%;
+            width: 22%;
+            border-radius: 100% / 100%;
+            left: 16%;
+            transform: rotate(-31deg);
+            top: -39%;
+        }
+
+        .skifcha .right-ear .shape:nth-child(1) {
+            height: 70%;
+            width: 20%;
+            border-radius: 100% / 100%;
+            right: -27%;
+            transform: rotate(6deg);
+            top: -32%;
+        }
+
+        .skifcha .right-ear .shape:nth-child(2) {
+            height: 70%;
+            width: 18%;
+            border-radius: 100% / 100%;
+            right: -10%;
+            transform: rotate(30deg);
+            top: -35%;
+        }
+
+        .skifcha .glasses {
+            position: absolute;
+            height: 43%;
+            width: 112%;
+            background-color: var(--glasses-color);
+            left: 8%;
+            top: 32%;
+            clip-path: polygon(5% 3%, 40% 6%, 65% 7%, 85% 9%, 99% 11%, 99% 34%, 99% 68%, 99% 72%, 93% 84%, 88% 96%, 76% 95%, 63% 95%, 56% 81%, 51% 70%, 45% 82%, 41% 95%, 25% 95%, 15% 95%, 6% 78%, 1% 67%, 2% 31%, 3% 10%);
+        }
+
+        .skifcha .glasses:before, 
+        .skifcha .glasses:after
+        {
+          content: "";
+          position: absolute;
+          background-color: var(--color);
+        }
+
+        .skifcha .glasses:before {
+            left: 13%;
+            top: 30%;
+            width: 27%;
+            height: 38%;
+            clip-path: polygon(29% 3%, 99% 10%, 94% 67%, 80% 97%, 29% 97%, 1% 51%);
+        }
+
+        .skifcha .glasses:after {
+            right: 11%;
+            top: 35%;
+            width: 28%;
+            height: 36%;
+          clip-path: polygon(0 0, 82% 1%, 100% 51%, 80% 100%, 30% 100%, 0 51%);
+        }
+
+        #credit {
+            position: absolute;
+            font-family: monospace;
+            font-size: 12px;
+            color: #B9B9B9;
+            margin-top: 70px;
+            left: 20px;
+            bottom: 20px;
+        }
+
+        a,
+        a:visited {
+          text-decoration: none;
+          color: #FC90A5;
+        }
+
+        a:focus,
+        a:hover {
+          color: #DC7E91;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="anaglyph">
+            <div class="skifcha red">
+                <div class="main-shape">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div class="left-ear">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div class="right-ear">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+            </div>
+            <div class="skifcha">
+                <div class="main-shape">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div class="left-ear">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div class="right-ear">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div class="glasses">
+                </div>
+            </div>
+            <div class="skifcha cyan">
+                <div class="main-shape">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div class="left-ear">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div class="right-ear">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="credit">
+            The CSS Dubstep Cat
+            <br> by <a href="https://github.com/VladimirMerk" target="_blank">VladimirMerk</a>
+        </div>
+        </div>
+    </main>
+</body>
+
+</html>
